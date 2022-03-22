@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>VueJS</title>
+
+        <link rel="stylesheet" href="css.css">
+</head>
+<body>
+  <form><input type ="text" placeholder="Enter a question here"></form> 
+</br>
+  <form><input type ="text" placeholder="Enter the answer here"></form> 
+</br>
+  <input type="radio" id="html" name="category" value="history">
+  <label for = "history">History</label>
+
+  <input type="radio" id="html" name="category" value="science">
+  <label for = "history">Science</label>
+
+  <input type="radio" id="html" name="category" value="math">
+  <label for = "history">Math</label>
+  <br>
+  <br>
+
+  <button id="clicker">Submit</button>
+  <br>
+  <br>
+
+  
+
+    <div id="flashcards-app">
+       <div v-for="card in cards" v-bind:class="[card.category,'card']">
+
+          <div v-if="card.category==='math'">
+              <div class="top math" >
+              </div>
+          </div>
+
+            <div v-if="card.category==='science'">
+              <div class="top science" >
+              </div>
+            </div>
+
+            <div v-if="card.category==='history'">
+              <div class="top history" >
+              </div>
+            </div>
+          
+              <div class="side1">
+                {{card.question}}
+              </div>
+              <div class="{side2}">
+                {{card.answer}}
+              </div>
+              
+
+        </div>
+
+        
+            
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
